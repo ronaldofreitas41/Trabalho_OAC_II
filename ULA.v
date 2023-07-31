@@ -12,13 +12,11 @@ module ULA (input         clk,
 			4'b0000: //Operação "And"
 				outputULA <= a & b;
 			4'b0001: //Operação "Or"
-				outputULA <= a || b;
+				outputULA <= a | b;
 			4'b0111; //Operação "Slt"
-				    if (a < b)
-        				outputULA = 1;
-    				else
-        				outputULA = 0;
+				    outputULA <= (a < b) ? 32'h1 : 32'h0
 			default://Se a entrada não bater com nada nenhuma operação será realizada
+				outputULA <= 32'h0;
 		endcase
 	end
 endmodule
