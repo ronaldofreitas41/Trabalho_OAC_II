@@ -1,3 +1,5 @@
+`include "MIPS.v"
+
 module tb;
 	
 	reg         clk;
